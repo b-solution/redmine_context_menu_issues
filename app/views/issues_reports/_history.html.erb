@@ -1,0 +1,30 @@
+
+<div class="wrapper-history mb-30">
+  <div class="heading">
+    History
+  </div>
+
+  <% for journal in issue.journals %>
+      <% next if journal.details.blank? %>
+      <div class="row">
+        <div class="col task-number"><b>#<%= journal.id %></b></div>
+        <div class="col">
+          <% if journal.details.any? %>
+              <ul class="details">
+                <li><b> <%= authoring journal.created_on, journal.user, :label => :label_updated_time_by %></b></li>
+                <% details_to_strings(journal.visible_details).each do |string| %>
+                    <li><%= string %></li>
+                <% end %>
+                <% if journal.notes.present? %>
+                    <li> <%= textilizable journal.notes.to_s %></li>
+                <% end %>
+
+              </ul>
+          <% end %>
+
+        </div>
+
+      </div>
+  <% end %>
+
+</div>

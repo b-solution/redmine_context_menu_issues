@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redmine report Issue</title>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
+        rel="stylesheet">
+  <!-- -->
+
+  <%= stylesheet_link_tag "styles", plugin: 'redmine_context_menu_issues' %>
+  <%= stylesheet_link_tag 'jquery/jquery-ui-1.11.0', 'application', 'responsive', :media => 'all' %>
+
+  <!-- -->
+
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="container">
+    <!--HEADER-->
+    <header>
+
+      <div class="logo">
+        <%= image_tag 'logo.png', plugin:  'redmine_context_menu_issues' %>
+      </div>
+
+    </header>
+    <!--HEADER END-->
+
+   <%= yield %>
+  </div>
+
+</div>
+</body>
+</html>

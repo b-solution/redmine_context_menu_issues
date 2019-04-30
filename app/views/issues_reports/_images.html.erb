@@ -1,0 +1,13 @@
+<% images = issue.attachments.where("content_type LIKE ?", "image/%") %>
+<% if images.present? %>
+    <div class="wrapper-images">
+      <div class="row mt-20">
+        <% images.each do |image| %>
+            <div class="col img">
+              <%= render :partial => 'common/image', :locals => {:path => download_named_attachment_path(image, image.filename), :alt => image.filename} %>
+              <div class="title-img"><%= image.filename %></div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+<% end %>

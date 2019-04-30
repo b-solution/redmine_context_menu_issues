@@ -1,0 +1,21 @@
+<!--WR-INFO-->
+<% @issues.each do |issue| %>
+    <%= render partial: 'attributes', locals: {issue: issue}%>
+    <!--WR-INFO END-->
+
+    <!--WR-FILES-->
+
+    <%= render partial: 'files', locals: {issue: issue}%>
+    <!--WR-FILES END-->
+
+    <!--WR-IMAGES-->
+
+    <%= render partial: 'images', locals: {issue: issue}%>
+    <!--WR-IMAGES END-->
+
+    <!--WR-HISTORY-->
+
+    <%= render partial: 'history', locals: {issue: issue}%>
+    <!--WR-HISTORY END-->
+    <hr/>
+<% end %>
