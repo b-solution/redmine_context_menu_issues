@@ -12,7 +12,29 @@
   <%= stylesheet_link_tag 'jquery/jquery-ui-1.11.0', 'application', 'responsive', :media => 'all' %>
 
   <!-- -->
+  <style>
+    @media print {
+      @page { margin: 0; }
+      body { margin: 1.6cm; }
+      header { width: 100% }
+      #logo_img{
+        position: absolute;
 
+        left: 750px;
+      }
+      .information_issue{
+        margin-top: 40px;
+      }
+      hr{
+        margin-top: 100px;
+      }
+    }
+    @media screen {
+      #logo_img{
+        float: right;
+      }
+    }
+  </style>
 </head>
 <body>
 <div class="wrapper">
@@ -22,15 +44,17 @@
     <header>
 
       <div class="logo">
-        <%= image_tag 'logo.png', plugin:  'redmine_context_menu_issues', style: 'float: right' %>
+        <%= image_tag 'logo.png', plugin:  'redmine_context_menu_issues', width: '152px', id: 'logo_img' %>
       </div>
 
     </header>
+    <hr/>
     <!--HEADER END-->
 
-   <%= yield %>
+    <%= yield %>
   </div>
 
 </div>
+
 </body>
 </html>

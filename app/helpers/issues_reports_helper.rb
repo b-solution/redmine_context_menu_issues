@@ -5,7 +5,12 @@ module IssuesReportsHelper
     return if values.empty?
     output = []
     values.each do |value|
-      output << "<tr><th>#{custom_field_name_tag(value.custom_field)}:</th><td>#{show_value(value)}</td></tr>"
+      output << "<tr>
+      <th width='15%'>#{custom_field_name_tag(value.custom_field)}:</th>
+      <td  width='35%'>#{show_value(value)}</td>
+      <th width='15%'></th>
+      <td  width='35%'></td>
+     </tr>"
     end
     output.join('').html_safe
   end

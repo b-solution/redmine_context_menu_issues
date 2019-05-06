@@ -1,7 +1,7 @@
 class IssuesReportsController < ApplicationController
 
   layout 'issues_reports'
-  before_action :require_login
+  # before_action :require_login
 
   include ApplicationHelper
   include IssuesHelper

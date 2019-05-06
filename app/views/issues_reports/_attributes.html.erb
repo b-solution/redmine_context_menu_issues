@@ -1,4 +1,4 @@
-<div>
+<div class="information_issue">
   <div class="mb-10" style="font-size: 18px"><%= issue.project.to_s %> - <%= issue.tracker %> #<%= issue.id %></div>
   <h1 class="mb-10"><%= issue.subject %></h1>
   <div class="mb-10"><%= format_time issue.created_on %> - <%= issue.author %></div>
@@ -57,7 +57,7 @@
 
           <tr>
             <td>
-              <%= textilizable issue, :description, :attachments => issue.attachments %>
+              <%= textilizable( issue, :description, :attachments => issue.attachments).html_safe %>
             </td>
           </tr>
         </table>
