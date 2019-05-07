@@ -8,47 +8,21 @@
         rel="stylesheet">
   <!-- -->
 
-  <%= stylesheet_link_tag "styles", plugin: 'redmine_context_menu_issues' %>
-  <%= stylesheet_link_tag 'jquery/jquery-ui-1.11.0', 'application', 'responsive', :media => 'all' %>
-
-  <!-- -->
-  <style>
-    @media print {
-      @page { margin: 0; }
-      body { margin: 1.6cm; }
-      header { width: 100% }
-      #logo_img{
-        position: absolute;
-
-        left: 750px;
-      }
-      .information_issue{
-        margin-top: 40px;
-      }
-      hr{
-        margin-top: 100px;
-      }
-    }
-    @media screen {
-      #logo_img{
-        float: right;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
 <div class="wrapper">
 
   <div class="container">
     <!--HEADER-->
-    <header>
+    <header style="position: relative">
 
       <div class="logo">
-        <%= image_tag 'logo.png', plugin:  'redmine_context_menu_issues', width: '152px', id: 'logo_img' %>
+        <%= image_tag 'logo.png', plugin:  'redmine_context_menu_issues', style: 'right: 0; position: absolute' %>
       </div>
 
     </header>
-    <hr/>
+
     <!--HEADER END-->
 
     <%= yield %>
