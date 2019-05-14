@@ -4,5 +4,4 @@
 clone this project inside redmine plugins
 git clone https://github.com/bilel-kedidi/redmine_context_menu_issue plugins/redmine_context_menu_issue
 
-
 and then restart your server
