@@ -1,6 +1,6 @@
 <% if @can[:edit] %>
     <% @issues_id = @issues.map(&:id) %>
     <li class="folder">
-      <a href="<%= issues_reports_path(issue_ids: @issues_id)%>" class="icon icon-report">Print Report</a>
+      <a href="<%= issues_reports_path(issue_ids: @issues_id)%>" class="icon icon-report" target="_blank">Print Report</a>
     </li>
 <% end %>
