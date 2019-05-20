@@ -1,21 +1,23 @@
 <!--WR-INFO-->
 <% @issues.each do |issue| %>
-    <%= render partial: 'attributes', locals: {issue: issue}%>
-    <!--WR-INFO END-->
+    <div style="page-break-before: always; page-break-after: always; width: 100%;">
+      <%= render partial: 'attributes', locals: {issue: issue}%>
+      <!--WR-INFO END-->
 
-    <!--WR-FILES-->
+      <!--WR-FILES-->
 
-    <%= render partial: 'files', locals: {issue: issue}%>
-    <!--WR-FILES END-->
+      <%= render partial: 'files', locals: {issue: issue}%>
+      <!--WR-FILES END-->
 
-    <!--WR-IMAGES-->
+      <!--WR-IMAGES-->
 
-    <%= render partial: 'images', locals: {issue: issue}%>
-    <!--WR-IMAGES END-->
+      <%= render partial: 'images', locals: {issue: issue}%>
+      <!--WR-IMAGES END-->
 
-    <!--WR-HISTORY-->
+      <!--WR-HISTORY-->
 
-    <%= render partial: 'history', locals: {issue: issue}%>
-    <!--WR-HISTORY END-->
-    <hr/>
+      <%= render partial: 'history', locals: {issue: issue}%>
+      <!--WR-HISTORY END-->
+    </div>
+
 <% end %>

@@ -9,26 +9,27 @@
   <!-- -->
 
   <link rel="stylesheet" href="/redmine/plugin_assets/redmine_context_menu_issues/stylesheets/styles.css">
+  <link rel="stylesheet" href="/plugin_assets/redmine_context_menu_issues/stylesheets/styles.css">
 </head>
 <body>
+<style>
+  @page
+  {
+    size: auto;   /* auto is the initial value */
+
+    /* this affects the margin in the printer settings */
+    margin: 25mm 5mm 0mm 9mm;
+  }
+</style>
 <div class="wrapper">
 
   <div class="container">
-    <!--HEADER-->
-    <header style="position: relative">
 
-      <div class="logo">
-        <%= image_tag 'logo.png', plugin:  'redmine_context_menu_issues', style: 'right: 0; position: absolute' %>
-      </div>
-
-    </header>
-
-    <!--HEADER END-->
 
     <%= yield %>
+
   </div>
 
 </div>
-
 </body>
 </html>

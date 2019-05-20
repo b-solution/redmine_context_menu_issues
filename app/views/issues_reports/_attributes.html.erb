@@ -1,8 +1,16 @@
-<div class="information_issue">
-  <div class="mb-10" style="font-size: 18px"><%= issue.project.to_s %> - <%= issue.tracker %> #<%= issue.id %></div>
-  <h1 class="mb-10"><%= issue.subject %></h1>
-  <div class="mb-10"><%= format_time issue.created_on %> - <%= issue.author %></div>
-</div>
+
+<header>
+  <div class="information_issue" >
+    <div class="mb-10" style="font-size: 18px"><%= issue.project.to_s %> - <%= issue.tracker %> #<%= issue.id %></div>
+    <h1 class="mb-10"><%= issue.subject %></h1>
+    <div class="mb-10"><%= format_time issue.created_on %> - <%= issue.author %></div>
+  </div>
+
+  <div class="logo">
+    <%= image_tag 'logo.png', plugin:  'redmine_context_menu_issues' %>
+  </div>
+
+</header>
 
 <div class="mb-30 wrapper-info">
   <table cellpadding="7" style="border: 1px solid #000;">
