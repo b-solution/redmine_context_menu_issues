@@ -17,31 +17,10 @@
   @page {
     size: auto;
     counter-increment: page;
-    margin: 25mm 5mm 2mm 9mm;
-  }
-
-  .page-number{
-    display: none;
-    bottom: 0px;
-    text-align: center;
-    width: 100%;
-  }
-  @media print {
-    .page-number{
-      display: block;
+    margin: 25mm 15mm 2mm 9mm;
+    @bottom-right {
+      content: "Page " counter(page) " of " counter(pages);
     }
-  }
-
-  #pageCounter { counter-reset: pageTotal; }
-  #pageCounter div.content_issue {
-    counter-increment: pageTotal;
-  }
-  #pageNumbers {
-    counter-reset: currentPage;
-  }
-  .page-number:before {
-    counter-increment: currentPage;
-    content: "Page " counter(pageTotal) " of ";
   }
 
 </style>
