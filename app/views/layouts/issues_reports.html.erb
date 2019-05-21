@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Redmine report Issue</title>
+  <title>Punch List Report</title>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i"
         rel="stylesheet">
@@ -12,14 +12,38 @@
   <link rel="stylesheet" href="/plugin_assets/redmine_context_menu_issues/stylesheets/styles.css">
 </head>
 <body>
-<style>
-  @page
-  {
-    size: auto;   /* auto is the initial value */
 
-    /* this affects the margin in the printer settings */
-    margin: 25mm 5mm 0mm 9mm;
+<style>
+  @page {
+    size: auto;
+    counter-increment: page;
+    margin: 25mm 5mm 2mm 9mm;
   }
+
+  .page-number{
+    display: none;
+    bottom: 0px;
+    text-align: center;
+    width: 100%;
+  }
+  @media print {
+    .page-number{
+      display: block;
+    }
+  }
+
+  #pageCounter { counter-reset: pageTotal; }
+  #pageCounter div.content_issue {
+    counter-increment: pageTotal;
+  }
+  #pageNumbers {
+    counter-reset: currentPage;
+  }
+  .page-number:before {
+    counter-increment: currentPage;
+    content: "Page " counter(pageTotal) " of ";
+  }
+
 </style>
 <div class="wrapper">
 

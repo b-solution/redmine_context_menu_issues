@@ -145,4 +145,14 @@ header {
 .wrapper-history .task-number {
   width: 25px;
 }
+.hide_logo .logo{
+  display: none;
+}
+
+@media print
+{
+  .hide_logo .logo{
+    display: block;
+  }
+}
 /*# sourceMappingURL=/redmine/plugin_assets/redmine_context_menu_issues/stylesheets/styles.css.map */
