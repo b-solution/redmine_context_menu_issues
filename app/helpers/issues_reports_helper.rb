@@ -5,6 +5,8 @@ module IssuesReportsHelper
     return if values.empty?
     output = []
     values.each do |value|
+      next if value.custom_field.name.to_s.downcase.include? 'redmine uuid'
+      next if value.custom_field.name.to_s.downcase.include? 'location'
       output << "<tr>
       <th width='15%'>#{custom_field_name_tag(value.custom_field)}:</th>
       <td  width='35%'>#{show_value(value)}</td>
