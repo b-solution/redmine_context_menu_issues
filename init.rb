@@ -1,10 +1,10 @@
 Redmine::Plugin.register :redmine_context_menu_issues do
-  name 'Redmine Context Menu Project plugin'
-  author 'Bilel KEDIDI'
-  description "Make possible to show all issues details in context menu"
+  name 'Print Punch List'
+  author 'FlexSolution'
+  description 'Make possible printing Punch List'
   version '0.0.1'
-  url 'https://www.github.com/bilel-kedidi/redmine_context_menu_issues'
-  author_url 'https://www.github.com/bilel-kedidi'
+  url 'https://git.flex-solution.com/Simplex/Redmine_ReportPlugin/'
+  author_url 'https://www.flex-solution.com'
 
   require 'issues_context_menu_issues_hook'
 
