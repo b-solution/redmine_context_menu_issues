@@ -11,7 +11,13 @@
             <div class="col">
               <% if journal.details.any? %>
                   <ul class="details">
-                    <li><b> <%= authoring journal.created_on, journal.user, :label => :label_updated_time_by %></b></li>
+                    <li><b>
+                      <% if recorded_by %>
+                          <%=  l(:label_updated_time_by, :author => recorded_by, :age => time_tag(journal.created_on)).html_safe %>
+                          <% else %>
+                          <%= authoring journal.created_on, journal.user, :label => :label_updated_time_by %>
+                          <% end %>
+                    </b></li>
                     <% details_to_strings(journal.visible_details).each do |string| %>
                         <li><%= string %></li>
                     <% end %>

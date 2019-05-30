@@ -8,7 +8,7 @@
     %>
     <div class="mb-10" style="font-size: 18px"><%= issue.project.to_s %> - <%= location_value %> <%= issue.tracker %> #<%= issue.id %></div>
     <h1 class="mb-10"><%= issue.subject %></h1>
-    <div class="mb-10"><%= format_time issue.created_on %> - <%= issue.author %></div>
+    <div class="mb-10"><%= format_time issue.created_on %> - <%= recorded_by || issue.author %></div>
   </div>
 
   <div class="logo">

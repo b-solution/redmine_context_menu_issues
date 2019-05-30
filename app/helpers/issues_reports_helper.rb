@@ -7,6 +7,7 @@ module IssuesReportsHelper
     values.each do |value|
       next if value.custom_field.name.to_s.downcase.include? 'redmine uuid'
       next if value.custom_field.name.to_s.downcase.include? 'location'
+      next if (issue.author.is_a? AnonymousUser) && value.custom_field.name.to_s.downcase.include?('recorded by')
       output << "<tr>
       <th width='15%'>#{custom_field_name_tag(value.custom_field)}:</th>
       <td  width='35%'>#{show_value(value)}</td>

@@ -9,7 +9,7 @@
             <div class="col name"><%= a.filename %></div>
             <div class="col weight"><%= render_size(a.filesize) %></div>
             <div class="col date"><%= format_date a.created_on %></div>
-            <div class="col anonymous"><%= a.author %></div>
+            <div class="col anonymous"><%= recorded_by || a.author %></div>
           </div>
       <% end %>
 
