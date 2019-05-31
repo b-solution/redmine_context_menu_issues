@@ -3,11 +3,11 @@
 <% params[:issue_ids].each_with_index do |issue_id, index| %>
     <% if issue = Issue.find_by_id(issue_id) %>
         <div class="content_issue <%= 'hide_logo' unless index.zero? %>" style="<%= 'page-break-before: always; page-break-after: always;' unless index.zero? %>">
-          <%= reported_by = if issue.author.is_a? AnonymousUser
-                              issue.visible_custom_field_values.detect { |cfv| cfv.custom_field.name.to_s.downcase.include? 'reported by' }.try(:value)
-          else
-          nil
-          end
+          <% reported_by = if issue.author.is_a? AnonymousUser
+                             issue.visible_custom_field_values.detect { |cfv| cfv.custom_field.name.to_s.downcase.include? 'reported by' }.try(:value)
+                           else
+                             nil
+                           end
           %>
           <%= render partial: 'attributes', locals: {issue: issue, reported_by: reported_by}%>
           <!--WR-INFO END-->
