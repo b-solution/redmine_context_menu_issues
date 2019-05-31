@@ -12,8 +12,8 @@
               <% if journal.details.any? %>
                   <ul class="details">
                     <li><b>
-                      <% if recorded_by %>
-                          <%=  l(:label_updated_time_by, :author => recorded_by, :age => time_tag(journal.created_on)).html_safe %>
+                      <% if reported_by %>
+                          <%=  l(:label_updated_time_by, :author => reported_by, :age => time_tag(journal.created_on)).html_safe %>
                           <% else %>
                           <%= authoring journal.created_on, journal.user, :label => :label_updated_time_by %>
                           <% end %>
