@@ -2,7 +2,7 @@ Redmine::Plugin.register :redmine_context_menu_issues do
   name 'Print Punch List'
   author 'FlexSolution'
   description 'Make possible printing Punch List'
-  version '0.1.0'
+  version '0.1.1'
   url 'https://git.flex-solution.com/Simplex/Redmine_ReportPlugin/'
   author_url 'https://www.flex-solution.com'
 
