@@ -12,7 +12,7 @@ module RedmineContextMenuIssues
       def author
         real_author = super
         if real_author.is_a? AnonymousUser
-          if reported_by = self.container&.reported_by
+          if reported_by = self.container.try(:reported_by)
             real_author.name= reported_by
             real_author.lastname= reported_by
           end
